@@ -15,7 +15,7 @@ public class TestWithIteratorTest {
         individuals.add(new Person(2, "meryem"));
         individuals.add(new Person(3, "fati"));
 
-        // Remove "Jane" using iterator
+       
         Iterator<Person> personIterator = individuals.iterator();
         while (personIterator.hasNext()) {
             Person individual = personIterator.next();
@@ -25,8 +25,8 @@ public class TestWithIteratorTest {
         }
 
         // Validate removal
-        assertFalse(individuals.stream().anyMatch(ind -> ind.getName().equals("Jane")),
-                "Jane should be removed from the set");
+        assertFalse(individuals.stream().anyMatch(ind -> ind.getName().equals("meryem")),
+                "meryem should be removed from the set");
         assertEquals(2, individuals.size(), "Set size should be 2 after removal");
     }
 }
