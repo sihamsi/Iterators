@@ -7,19 +7,20 @@ import java.util.Set;
 public class TestPersonWithIterator {
     public static void main(String[] args) {
         Set<Person> people = new HashSet<>();
-        people.add(new Person(1, "siham"));
-        people.add(new Person(2, "meryem"));
-        people.add(new Person(3, "fatima-ezzahera"));
+        people.add(new Person(1, "Siham"));
+        people.add(new Person(2, "Meryem"));
+        people.add(new Person(3, "Fatima-Ezzahera"));
 
-        // Suppression avec iterator (sécurisé)
+        // Remove "Meryem" using an iterator (safe removal)
         Iterator<Person> iterator = people.iterator();
         while (iterator.hasNext()) {
             Person person = iterator.next();
-            if (person.getName().equals("meryem")) {
-                iterator.remove(); // Suppression sécurisée
+            if (person.getName().equalsIgnoreCase("Meryem")) {
+                iterator.remove(); // Safe removal
             }
         }
 
-        System.out.println("Set après suppression de 'meryem' : " + people);
+        // Print the set after removal
+        System.out.println("Set après suppression de 'Meryem' : " + people);
     }
 }
